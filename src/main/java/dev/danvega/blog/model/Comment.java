@@ -1,11 +1,15 @@
 package dev.danvega.blog.model;
 
-import com.fasterxml.jackson.annotation.JsonCreator;
+import java.time.LocalDateTime;
+
 import org.springframework.data.annotation.PersistenceCreator;
 import org.springframework.data.annotation.Transient;
 
-import java.time.LocalDateTime;
+import com.fasterxml.jackson.annotation.JsonCreator;
 
+import lombok.Data;
+
+@Data
 public final class Comment {
 
     private String name;
@@ -28,47 +32,5 @@ public final class Comment {
         this.content = content;
         this.publishedOn = publishedOn;
         this.updatedOn = updatedOn;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public String getContent() {
-        return content;
-    }
-
-    public void setContent(String content) {
-        this.content = content;
-    }
-
-    public LocalDateTime getPublishedOn() {
-        return publishedOn;
-    }
-
-    public void setPublishedOn(LocalDateTime publishedOn) {
-        this.publishedOn = publishedOn;
-    }
-
-    public LocalDateTime getUpdatedOn() {
-        return updatedOn;
-    }
-
-    public void setUpdatedOn(LocalDateTime updatedOn) {
-        this.updatedOn = updatedOn;
-    }
-
-    @Override
-    public String toString() {
-        return "Comment{" +
-                "name='" + name + '\'' +
-                ", content='" + content + '\'' +
-                ", publishedOn=" + publishedOn +
-                ", updatedOn=" + updatedOn +
-                '}';
     }
 }
